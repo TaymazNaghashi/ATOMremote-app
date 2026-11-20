@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>ATOM</title>
+<meta name="description" content="Tell ATOM to do something on your laptop.">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ATOM">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+<link rel="stylesheet" href="ios.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="edge-glow" aria-hidden="true"></div>
+<div id="page">
+  <header class="top">
+    <button class="island" id="island" aria-live="polite">
+      <span class="ring" aria-hidden="true"></span>
+      <span class="orb" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="island-body">
+        <span class="island-title" id="island-title">ATOM</span>
+        <span class="island-sub" id="island-sub">Connecting…</span>
+        <span class="island-steps" id="island-steps"></span>
+      </span>
+      <span class="island-mark" id="island-mark" aria-hidden="true"></span>
+    </button>
+    <button class="nav-btn gear" id="btn-settings" aria-label="Settings"></button>
+  </header>
+
+  <main class="feed" id="feed"></main>
+</div>
+
+<footer class="dock" id="dock">
+  <div class="chips" id="chips"></div>
+  <form class="composer" id="composer" autocomplete="off">
+    <button class="vcancel" id="vcancel" type="button" aria-label="Cancel voice" hidden></button>
+    <textarea id="input" rows="1" placeholder="Ask ATOM to do something…" aria-label="Command" enterkeyhint="send"></textarea>
+    <div class="voicebar" id="voicebar" hidden><canvas id="wave" aria-hidden="true"></canvas><span class="vtimer" id="vtimer">0:00</span></div>
+    <button class="mic" id="mic" type="button" aria-label="Speak a command" hidden></button>
+    <button class="send" id="send" type="submit" aria-label="Send" disabled></button>
+  </form>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="scrim"></div>
+<div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-hidden="true"></div>
+
+<script src="docsync.js"></script>
+<script src="ui.js"></script>
+<script src="voice.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
